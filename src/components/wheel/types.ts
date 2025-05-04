@@ -1,3 +1,5 @@
+import type { CSSProperties } from "vue";
+
 interface ImagePropsLocal extends ImageProps {
   _imageHTML?: HTMLImageElement;
 }
@@ -48,4 +50,9 @@ export interface DrawWheelProps {
   prizeMap: number[][];
   rouletteUpdater: boolean;
   textDistance: number;
+}
+
+export interface PointerProps {
+  src?: string;
+  style?: CSSProperties;
 }

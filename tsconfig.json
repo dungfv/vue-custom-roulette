@@ -16,7 +16,10 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "allowJs": true,
+    "outDir": "dist",
+    "declaration": true
   },
 }
 

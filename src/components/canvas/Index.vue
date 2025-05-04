@@ -5,10 +5,9 @@
 
 
 <script lang="ts" setup>
-  import { ref } from 'vue'
+  import { onMounted, ref } from 'vue'
   import { type DrawWheelProps, type WheelCanvasProps, type WheelData } from '../wheel/types';
   import { clamp, getQuantity } from '../../utils'
-
 
   const props = defineProps<WheelCanvasProps>()
 
@@ -193,5 +192,26 @@
         startAngle = endAngle;
       }
     }
+
   }
+
+  onMounted(() => {
+    drawWheel(props.data, {
+      outerBorderColor: props.outerBorderColor,
+      outerBorderWidth: props.outerBorderWidth,
+      innerRadius: props.innerRadius,
+      innerBorderColor: props.innerBorderColor,
+      innerBorderWidth: props.innerBorderWidth,
+      radiusLineColor: props.radiusLineColor,
+      radiusLineWidth: props.radiusLineWidth,
+      fontFamily: props.fontFamily,
+      fontWeight: props.fontWeight,
+      fontSize: props.fontSize,
+      fontStyle: props.fontStyle,
+      perpendicularText: props.perpendicularText,
+      prizeMap: props.prizeMap,
+      textDistance: props.textDistance,
+      rouletteUpdater: props.rouletteUpdater,
+    })
+  })
 </script>

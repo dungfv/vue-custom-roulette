@@ -1,6 +1,17 @@
 <template>
-  <img class="non-draggable-image roulette-pointer-image" src="your-pointer-image.png" alt="pointer" />
+  <img 
+    class="non-draggable-image roulette-pointer-image" 
+    :src="src || Pointer"
+    :style="style || {}"
+    alt="pointer" />
 </template>
+
+<script lang="ts" setup>
+  import Pointer from './../../assets/roulette-pointer.png'
+  import type { PointerProps } from './types';
+
+  const { src, style } = defineProps<PointerProps>()
+</script>
 
 <style scoped>
   .non-draggable-image {
@@ -8,7 +19,6 @@
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    user-drag: none;
   }
 
   .roulette-pointer-image {
