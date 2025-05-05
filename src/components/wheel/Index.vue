@@ -68,38 +68,12 @@
     DEFAULT_TEXT_DISTANCE,
     WEB_FONTS,
     DISABLE_INITIAL_ANIMATION,
-  } from '../../constant';
-  import type { PointerProps, WheelData } from './types';
-  import { getQuantity, getRotationDegrees, isCustomFont, makeClassKey } from '../../utils';
-  import RoutePointerImage from './RoutePointerImage.vue';
-  
-  interface Props {
-    mustStartSpinning: boolean;
-    prizeNumber: number;
-    data: WheelData[];
-    onStopSpinning?: () => any;
-    backgroundColors?: string[];
-    textColors?: string[];
-    outerBorderColor?: string;
-    outerBorderWidth?: number;
-    innerRadius?: number;
-    innerBorderColor?: string;
-    innerBorderWidth?: number;
-    radiusLineColor?: string;
-    radiusLineWidth?: number;
-    fontFamily?: string;
-    fontSize?: number;
-    fontWeight?: number | string;
-    fontStyle?: string;
-    perpendicularText?: boolean;
-    textDistance?: number;
-    spinDuration?: number;
-    startingOptionIndex?: number;
-    pointerProps?: PointerProps;
-    disableInitialAnimation?: boolean;
-  }
+  } from '../../constant'
+  import { getQuantity, getRotationDegrees, isCustomFont, makeClassKey } from '../../utils'
+  import RoutePointerImage from './RoutePointerImage.vue'
+  import type { SpinWheelProps, WheelData } from '../../../types'
 
-  const props = defineProps<Props>()
+  const props = defineProps<SpinWheelProps>()
 
   const wheelData = ref<WheelData[]>([...props.data]);
   const prizeMap = ref<number[][]>([[0]]);
@@ -267,7 +241,3 @@
   };
 
 </script>
-
-<style scoped>
-  .roulette_container { transform: rotate(43deg); }
-</style>

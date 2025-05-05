@@ -1,4 +1,4 @@
-import type { CSSProperties } from "vue";
+import type { CSSProperties } from "vue"
 
 interface ImagePropsLocal extends ImageProps {
   _imageHTML?: HTMLImageElement;
@@ -56,3 +56,32 @@ export interface PointerProps {
   src?: string;
   style?: CSSProperties;
 }
+
+export interface SpinWheelProps {
+  mustStartSpinning: boolean;
+  prizeNumber: number;
+  data: WheelData[];
+  onStopSpinning?: () => any;
+  backgroundColors?: string[];
+  textColors?: string[];
+  outerBorderColor?: string;
+  outerBorderWidth?: number;
+  innerRadius?: number;
+  innerBorderColor?: string;
+  innerBorderWidth?: number;
+  radiusLineColor?: string;
+  radiusLineWidth?: number;
+  fontFamily?: string;
+  fontSize?: number;
+  fontWeight?: number | string;
+  fontStyle?: string;
+  perpendicularText?: boolean;
+  textDistance?: number;
+  spinDuration?: number;
+  startingOptionIndex?: number;
+  pointerProps?: PointerProps;
+  disableInitialAnimation?: boolean;
+}
+
+import Wheel from './src/components/wheel/Index.vue'
+export { Wheel }

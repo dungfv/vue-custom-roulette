@@ -1,13 +1,11 @@
 <template>
-  <canvas ref="canvasRef" style="width: 98%; height: 98%;" :width="width" :height="height"></canvas>
+  <canvas ref="canvasRef" style="width: 100%; height: 100%;" :width="width" :height="height"></canvas>
 </template>
-
-
 
 <script lang="ts" setup>
   import { onMounted, ref } from 'vue'
-  import { type DrawWheelProps, type WheelCanvasProps, type WheelData } from '../wheel/types';
   import { clamp, getQuantity } from '../../utils'
+  import type { DrawWheelProps, WheelCanvasProps, WheelData } from '../../../types';
 
   const props = defineProps<WheelCanvasProps>()
 
@@ -178,7 +176,7 @@
           const text = data[i].option;
           ctx.font = `${style?.fontStyle || fontStyle} ${style?.fontWeight || fontWeight
             } ${(style?.fontSize || fontSize) * 2}px ${style?.fontFamily || fontFamily
-            }, Helvetica, Arial`;
+            }, sans-serif, Helvetica, Arial`;
           ctx.fillStyle = (style && style.textColor) as string;
           ctx.fillText(
             text || '',

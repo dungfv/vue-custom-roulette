@@ -24,7 +24,9 @@ const props = defineProps<{
 
 const containerStyle = computed(() => {
   const baseStyle = {
-    transform: `rotate(${props.startRotationDegrees}deg)`
+    transform: `rotate(${props.startRotationDegrees}deg)`,
+    width: '622px',
+    height: '622px',
   };
 
   if (props.isSpinning) {

@@ -9,7 +9,7 @@
       style: {
         backgroundColor: 'blue',
         textColor: '#ffffff',
-        fontSize: 11,
+        fontSize: 10,
         fontFamily: 'sans-serif'
       }
     },
@@ -56,7 +56,7 @@
   <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
     <div style="height: 622px; height: 622px;">
       <Wheel :data="[...data, ...data]"
-        :prizeNumber="2" 
+        :prizeNumber="0" 
         :mustStartSpinning="spinning" 
         :innerRadius="15" 
         innerBorderColor="#e0e0e0"
@@ -65,13 +65,13 @@
         :radiusLineWidth="1"
         outerBorderColor="#eeeeee"
         :outerBorderWidth="0"
-        :fontSize="16" 
+        :fontSize="16"
         :backgroundColors="['#c23f33', '#122433']"
         :textColors="['#ffffff', '#ffffff']"
         :spinDuration="0.5" 
         :startingOptionIndex="0" 
         :pointerProps="{
-          src: Pointer,
+          // src: Pointer,
           style: {
             // width: '100%',
             // right: '20px',
